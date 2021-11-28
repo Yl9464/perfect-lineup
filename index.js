@@ -1,9 +1,9 @@
 const validateLineup = (lineup) => {
-  const allTeams = lineup.map((team) => team.teamId).reduce((teams, allTeams) => {
-    console.log(teams)
+  const payMe = lineup.reduce((player, salaries) => {
+    return player + salaries.salary
+  }, 0)
 
-    return teams = allTeams <= 2
-  })
+  return payMe <= 45000
 }
 
 module.exports = validateLineup
