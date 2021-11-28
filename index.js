@@ -1,14 +1,13 @@
-
 const validateLineup = (lineup) => {
+  //total 35600 (return flase)
+  const totalSal = lineup.reduce((currentSal, sal) => {
+    return sal.salary + currentSal
+  }, 0)
 
-  const finalTeam = lineup.map((team) => {
-    team.lineup = ((team.position === 3) && (team.teamID <= 2) && (team.gameId <= 3) && (team.salary <= 45000))
-
-    return team
-  })
-
-  return validateLineup
+  console.log(totalSal)
 }
+
+
 
 
 module.exports = validateLineup
