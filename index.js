@@ -4,16 +4,9 @@ const validateLineup = (lineup) => {
     return sal.salary + currentSal
   }, 0)
 
-  // return an array of all teamIds and filter the teams with 2 or less players for single team
-  // lineup.forEach((team) => {
-  // console.log(team.teamId)
-  // })
-
-  const mapTeams = lineup.map((team) => {
-    return team.teamId
-  })
-
-  console.log(mapTeams)
+  // return an array of all teamIds, and filter the teams with 2 or less players for single team
+  //which is an empty array 
+  const mapTeams = lineup.map(team => team.teamId).filter(team => team.length <= 2)
 }
 
 
