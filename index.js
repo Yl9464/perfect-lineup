@@ -5,11 +5,16 @@ const validateLineup = (lineup) => {
   }, 0)
 
   // return an array of all teamIds and filter the teams with 2 or less players for single team
-  lineup.forEach((team) => {
-    console.log(team.teamId)
-  })
-}
+  // lineup.forEach((team) => {
+  // console.log(team.teamId)
+  // })
 
+  const mapTeams = lineup.map((team) => {
+    return team.teamId
+  })
+
+  console.log(mapTeams)
+}
 
 
 module.exports = validateLineup
