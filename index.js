@@ -9,12 +9,13 @@ const validateLineup = (lineup) => {
 }
 
 const validateSal = (lineup) => {
-  const payMe = lineup.reduce((player, salaries) => {
-    return player + salaries.salary
+  const payMe = lineup.reduce((acc, currentVal) => {
+    return acc + currentVal.salary
   }, 0)
 
   return payMe <= 45000
 }
+
 
 const validateTeams = (lineup) => {
   const teams = lineup.map((team => team.teamId))
@@ -43,8 +44,9 @@ const validatePlayerCount = (lineup) => {
 const validatePositions = (lineup) => {
   const spots = lineup.map((spot) => spot.position)
   const outFielders = spots.filter((fielder) => fielder === 'OF')
+
   if (outFielders.length !== 3) return false
-  
+
   const otherPositions = spots.filter((fielder) => fielder !== 'OF')
 
   const noDups = [...new Set(otherPositions)]
